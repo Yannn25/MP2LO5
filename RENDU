@@ -8,9 +8,9 @@ Date limite: 19 décembre 2022
 
 Identité
 --------
-Nombre de binôme: **à remplir**
-Nom, prénom 1: **à remplir**
-Nom, prénom 2: **à remplir**
+Nombre de binôme: 6
+Nom, prénom 1: IM Hyejong
+Nom, prénom 2: EDIKEU Yann
 
 
 Questions sur votre code
@@ -22,7 +22,8 @@ Questions sur votre code
    warnings, puis que `./invariants` produit une sortie au format
    SMT-LIB, et enfin que cette sortie est acceptée par Z3 ?
 
-**à remplir** 
+   -- Aucun problème de compilation, et le fichier invariants produit bien
+   un fichier au format SMT-LIB qui est acceptée par Z3 --
 
 ---
 
@@ -31,8 +32,11 @@ Questions sur votre code
    strictement décroissante au cours des appels successifs vous assure
    la terminaison ?
    
-
-**à remplir**
+   -- Pour un type récursif, il est naturel d'utiliser des fonctions...
+   récursif; les 'attributs' Const et Var sont nos cas de base étant donné
+   que eux ne sont pas constitué du type term; Après 2n appel a notre fonction
+   on est assuré de la terminaison, ou n represente un terme qui est soit
+   Add ou Mult puisque ils sont eux meme composer de deux termes. --
 
 ---
 
@@ -45,7 +49,13 @@ Questions sur votre code
    comment ces fonctions auxiliaires sont utilisées dans votre
    implémentation de la fonction `str_condition`.
    
-**à remplir**
+   -- Nous avons utiliser une fonction auxiliaire que nous avons nommer aux, qui va 
+   tout simplement ce charger de d'appliquer la fonction str_of_term sur chaque terme
+   de notre liste. Elle prend en paramètre la liste de terme l de départ et un string contenant
+   "Inv " (le début de notre String final) que l'on nomme  ici acc, 
+   puis ensuite tant que notre tableau n'est pas vide on applique str_of_term sur le i-ème
+   terme de l.Et pour finir lorsque notre liste est enfin vide, on ferme la parenthèse 
+   final de notre string. --
 
 ---
 
@@ -55,7 +65,12 @@ Questions sur votre code
    auxiliaires sont utilisées dans votre implémentation de la fonction
    `str_assert_forall`.
    
-**à remplir**   
+   -- Nous avons écrit deux fonctions auxiliaires qui sont 'imbriquer'. La 1ère
+   c'est make_x qui permet l'affichage de xn Int sur toutes les variables comprise 
+   dans s en appliquant la fonction x déjà écrite; a l'aide de la fonction recursive
+   boucle qui va ce charger de d'ajouter dans un accumulateur les applications 
+   de la fonction x, en veillant au bon formatage de notre String. Et on fini
+   par afficher l'ensemble dans une string final a l'aide de la fonction str_assert --
    
 ---
 
@@ -72,11 +87,13 @@ Questions sur votre code
    code pour construite un programme SMT-LIB plus proche de la façon
    dont les variables sont mises à jour en Java.
 
-**à remplir**
+   -- Il faudrait simplement ne pas appliquer les Add du mods du type programme
+   en meme temps, pour au contraire retrouver cette mise a jour séquentielle des 
+   variables comme en JAVA. --
 
 ---
 5. Avez-vous d'autres remarques sur votre rendu ? (question optionnelle)
 
-**à remplir**
+   -- XXX --
 
 
